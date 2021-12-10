@@ -1,0 +1,38 @@
+
+.carousel-inner > .carousel-item > img {
+    height: 85vh;
+    object-fit: cover;
+}
+
+.navbar {
+    background-color: #20c997;
+}
+
+.titleCaroussel {
+    padding-left: 15%;
+    padding-top: 10%;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.visi {
+    min-height: 400px;
+    width: 100%;
+}
+
+.visi > .character {
+    min-width: 50%;
+}
+
+.visi > .visiMisi {
+    min-width: 50%;
+}
+
+.bannerJoin {
+    min-height: 100px;
+    color: #fff;
+}
+
+.card-body > .card > img {
+    height: 150px;
+    object-fit: cover;
+}
