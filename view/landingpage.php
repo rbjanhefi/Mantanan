@@ -128,3 +128,11 @@
     </body>
 
 </html>
+<?php
+
+    if (isset($_GET['error'])) {
+        echo "<p class='error alert alert-danger'>";
+        echo $_GET['error'];
+    }
+
+?>
