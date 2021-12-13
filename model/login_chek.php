@@ -2,7 +2,7 @@
 
 session_start();
 
-if(isset($_SESSION['email'])){
+if(isset($_SESSION['email']) || isset($_COOKIE['user']) ){
     header("location:../index.php");
 }
 
@@ -37,7 +37,14 @@ if(isset($_POST['login'])){
         if(mysqli_num_rows($result) == 1){
             $row = mysqli_fetch_assoc($result);
             if($row['email']==$email && $row['password']==$password){
+                
+                //SESSION
                 $_SESSION['email'] = $row['email'];
+
+                //REMEMBER ME COOKIES
+                if($_POST['remember']==true){
+                    setcookie('user',$email,time()+3600);
+                  }
  
                 header("location:../index.php");
                 exit();
