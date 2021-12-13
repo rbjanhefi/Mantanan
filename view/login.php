@@ -47,8 +47,8 @@
                 </div>
                 
                 <div class="form-group ">
-                    <!-- <input class="form-check-input" type="checkbox" id="gridCheck">
-                    <label class="form-check-label" for="gridCheck">Show Password</label> -->
+                    <input class="form-check-input" type="checkbox" id="gridCheck" name="remember">
+                    <label class="form-check-label" for="gridCheck">Remember Me</label>
                 </div>
 
                 <br><br><br>
