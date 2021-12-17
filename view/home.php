@@ -13,20 +13,20 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="header">
+    <div class="header sticky-lg-top">
         <div class="logo">
-            <p>ini logo</p>
+            <img src="../../asset/logo/h-removebg-preview.png" alt="" srcset="">
         </div>
-        <div class="input-group mb-2 mt-2 p-2">
+        <div class="input-group mb-2 mt-2 p-2 h-100">
             <input type="text" class="form-control" placeholder="Cari Barang" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cari</button>
+            <button class="btn btn-light" type="button" id="button-addon2">Cari</button>
         </div>
         <div class="account">
             <i class="bi bi-person-circle"></i>
         </div>
     </div>
-    <section class="content d-flex">
-        <div class="kategori border m-2 mt-lg-3 ">
+    <section class="content d-flex mt-5">
+        <div class="kategori shadow m-2 mt-lg-3 ">
             <div class="title m-3">
                 <p>Kategori</p>
             </div>
@@ -57,7 +57,7 @@
                     <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Jaket Hoodie</h5>
-                        <p class="card-subtitle mb-2 text-muted fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-subtitle mb-2 text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text fs-5">Rp 100.000</p>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Jaket Hoodie</h5>
-                        <p class="card-subtitle mb-2 text-muted fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-subtitle mb-2 text-muted"> text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text fs-5">Rp 100.000</p>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                     <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Jaket Hoodie</h5>
-                        <p class="card-subtitle mb-2 text-muted fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-subtitle mb-2 text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text fs-5">Rp 100.000</p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                     <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Jaket Hoodie</h5>
-                        <p class="card-subtitle mb-2 text-muted fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-subtitle mb-2 text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text fs-5">Rp 100.000</p>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                     <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Jaket Hoodie</h5>
-                        <p class="card-subtitle mb-2 text-muted fs-6">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p class="card-subtitle mb-2 text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         <p class="card-text fs-5">Rp 100.000</p>
                     </div>
                 </div>
@@ -103,9 +103,9 @@
 </html>
 <?php
 
-    if (isset($_GET['error'])) {
-        echo "<p class='error alert alert-danger'>";
-        echo $_GET['error'];
-    }
+    // if (isset($_GET['error'])) {
+    //     echo "<p class='error alert alert-danger'>";
+    //     echo $_GET['error'];
+    // }
 
 ?>
