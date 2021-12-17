@@ -16,7 +16,9 @@
     <body>
         <nav class="navbar navbar-expand navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Logo</a>
+                <a class="navbar-brand" href="#">
+                    <img src="../../asset/logo/h-removebg-preview.png" alt="">
+                </a>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -130,9 +132,9 @@
 </html>
 <?php
 
-    if (isset($_GET['error'])) {
-        echo "<p class='error alert alert-danger'>";
-        echo $_GET['error'];
-    }
+    // if (isset($_GET['error'])) {
+    //     echo "<p class='error alert alert-danger'>";
+    //     echo $_GET['error'];
+    // }
 
 ?>
