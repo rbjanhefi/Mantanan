@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
 .header {
     display: flex;
+    align-items: center;
+    background-color: #6ECB63;
 }
 .logo {
     min-width: 100px;
@@ -45,4 +51,21 @@ section.content {
 .card > img {
     height: 100px;
     object-fit: contain;
+}
+
+/* .card > .card-body {
+    background-color: aqua;
+} */
+
+.card > .card-body > .card-subtitle {
+    font-size: 13px;
+}
+
+.header > .logo {
+    height: 100px;
+}
+
+.header > .logo > img {
+    object-fit: cover;
+    height: 100%;
 }
