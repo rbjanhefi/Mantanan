@@ -1,0 +1,14 @@
+.Cbtn {
+    width: 100px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
+    transform: translate(0,0);
+    transition-duration: .1s;
+}
+
+.Cbtn:focus {
+    box-shadow: none;
+    transform: translate(2px,2px);
+}

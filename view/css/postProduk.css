@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+form .form-control:focus{
+    border-color: #ced4da;
+    box-shadow: none;
+}
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.UploadProduk {
+    width: 95%;
+}
+
+.left {
+    margin-left: 223px;
+}
+
+
