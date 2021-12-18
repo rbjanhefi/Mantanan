@@ -9,22 +9,41 @@
     <link rel="stylesheet" href="../css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
+    <link rel="stylesheet" href="../css/active.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/button.css">
     <title>Hello, world!</title>
   </head>
   <body>
-    <div class="header sticky-lg-top">
-        <div class="logo">
-            <img src="../../asset/logo/h-removebg-preview.png" alt="" srcset="">
+    <nav class="navbar sticky-top navbar-expand navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                logo
+            </a> 
+            <div class="collapse navbar-collapse text-light" id="navbarText">
+                <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto" >
+                    <li class="nav-item">
+                        <a class="nav-link text-light" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item activee">
+                        <a class="nav-link " href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#">About</a>
+                    </li>
+                </ul>
+                <form class="d-flex me-3">
+                    <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
+                </form>
+                <span class="navbar-text">
+                    <button class="Cbtn btn btn-primary me-2" type="button">Login</button>
+                </span>
+            </div>
         </div>
-        <div class="input-group mb-2 mt-2 p-2 h-100">
-            <input type="text" class="form-control" placeholder="Cari Barang" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-light" type="button" id="button-addon2">Cari</button>
-        </div>
-        <div class="account">
-            <i class="bi bi-person-circle"></i>
-        </div>
-    </div>
+    </nav>
     <section class="content d-flex mt-5">
         <div class="kategori shadow m-2 mt-lg-3 ">
             <div class="title m-3">
@@ -97,7 +116,28 @@
             
         </div>
     </section>
-    
+    <footer class="bg-black w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5">
+        <div class="logo">
+            <p>ini Logo</p>
+        </div>
+        <div class="addres">
+            <p>Alamat</p>
+            <p>Sleman Yogyakarta</p>
+        </div>
+        <div class="contact">
+            <p>Contact</p>
+            <div class="d-flex">
+                <div class="contactName">
+                    <p>Whatsapp </p>
+                    <p>Email</p>
+                </div>
+                <div class="detailContact ms-lg-4">
+                    <p>+6285338562270</p>
+                    <p>Mantanant@mantanan.info</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 </html>

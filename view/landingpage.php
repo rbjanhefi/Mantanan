@@ -10,29 +10,38 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="../css/landingpage.css">
+        <link rel="stylesheet" href="../css/active.css">
+        <link rel="stylesheet" href="../css/navbar.css">
+        <link rel="stylesheet" href="../css/button.css">
         <title>Hello, world!</title>
     </head>
 
     <body>
-        <nav class="navbar navbar-expand navbar-light bg-light">
+        <nav class="navbar sticky-top navbar-expand navbar-light bg-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="../../asset/logo/h-removebg-preview.png" alt="">
-                </a>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    logo
+                </a> 
+                <div class="collapse navbar-collapse text-light" id="navbarText">
+                    <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto" >
+                        <li class="nav-item activee" >
+                            <a class="nav-link" style="z-index: 2;" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Shop</a>
+                            <a class="nav-link text-light" href="#">Shop</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link text-light" href="#">Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">About</a>
                         </li>
                     </ul>
-                    <span class="navbar-text">
-                        <button class="btn btn-outline-success me-2" type="button">Login</button>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
+                    </form>
+                    <span class="navbar-text text-light">
+                        <button class="Cbtn btn-info me-2" type="button">Login</button>
                     </span>
                 </div>
             </div>
@@ -40,7 +49,7 @@
         <section class="banner">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner position-relative">
-                    <div class="carousel-item active">
+                    <div class="carousel-item active ">
                         <img src="../../asset/img/donation1.jpg" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
