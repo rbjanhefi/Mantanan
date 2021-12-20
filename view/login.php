@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../css/font.css">
     <title>Mantanan - Login and Register </title>
   </head>
   <body>
@@ -22,7 +22,7 @@
         
         <div class="container login-form"  style="background: white;">
             <form method="POST" class="row g-3" style="margin: 50px;" action="../model/login_chek.php"> 
-                <h2 class="d-flex justify-content-center" style="margin-bottom: 30px;">Mantanan</h2>
+                <h2 class="d-flex justify-content-center" style="margin-bottom: 30px;"> <span class="logo">M</span><span class="antanan" >antanan</span></h2>
 
                 <!-- PHP ALERT -->
                 <span>
@@ -78,5 +78,4 @@
     -->
   </body>
 </html>
-
 

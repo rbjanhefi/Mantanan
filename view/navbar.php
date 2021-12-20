@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="../css/active.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/font.css">
     <title>Hello, world!</title>
 </head>
 
 <body>
-    <nav class="navbar sticky-top navbar-expand navbar-light bg-light">
+    <nav class="navbar sticky-top navbar-expand navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                logo
+                <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
             </a>
             <div class="collapse navbar-collapse text-light" id="navbarText">
                 <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto">

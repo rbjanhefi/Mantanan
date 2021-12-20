@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="../css/active.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/button.css">
+    <link rel="stylesheet" href="../css/font.css">
     <title>Hello, world!</title>
 </head>
 
 <body>
     <footer class="bg-black w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5">
         <div class="logo">
-            <p>ini Logo</p>
+        <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
             <p>Alamat</p>
