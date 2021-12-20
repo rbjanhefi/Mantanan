@@ -1,10 +1,7 @@
 <?php 
-session_start();
 include('config/db_conn.php');
 
-if (!isset($_SESSION['email']) && !isset($_COOKIE['user']) ) {
-    header("location:view/login.php");
-}
+
 ?>
 
 <!DOCTYPE html>
