@@ -3,16 +3,16 @@ form .form-control:focus{
     box-shadow: none;
 }
 .navbar {
-    background-color: #79018C!important;
+    background-color: #160040 !important;
     padding: 0;
     height: 60px;
+    border-bottom: 2px solid rgb(255, 255, 255) !important;
 }
 
 .collapse > ul {
     min-width: 500px;
     padding: 0;
     margin: 0;
-    
 }
 
 .collapse > ul > li{
@@ -20,7 +20,7 @@ form .form-control:focus{
     width: 110px;
     z-index: 2;
     padding: 0;
-    margin-top: 18px ;
+    margin-top: 16px ;
     text-align: center;
 }
 
