@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,37 +14,10 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/button.css">
     <title>Hello, world!</title>
-  </head>
-  <body>
-    <nav class="navbar sticky-top navbar-expand navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                logo
-            </a> 
-            <div class="collapse navbar-collapse text-light" id="navbarText">
-                <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto" >
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item activee">
-                        <a class="nav-link " href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">About</a>
-                    </li>
-                </ul>
-                <form class="d-flex me-3">
-                    <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
-                </form>
-                <span class="navbar-text">
-                    <button class="Cbtn btn btn-primary me-2" type="button">Login</button>
-                </span>
-            </div>
-        </div>
-    </nav>
+</head>
+
+<body>
+    <?php include "./navbar.php" ?>
     <section class="content d-flex mt-5">
         <div class="kategori shadow m-2 mt-lg-3 ">
             <div class="title m-3">
@@ -53,19 +27,19 @@
                 <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                    Baju
+                        Baju
                     </label>
                 </div>
                 <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                    Celana
+                        Celana
                     </label>
                 </div>
                 <div class="form-check mx-3">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                    Kursi
+                        Kursi
                     </label>
                 </div>
             </div>
@@ -113,39 +87,11 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
-    <footer class="bg-black w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5">
-        <div class="logo">
-            <p>ini Logo</p>
-        </div>
-        <div class="addres">
-            <p>Alamat</p>
-            <p>Sleman Yogyakarta</p>
-        </div>
-        <div class="contact">
-            <p>Contact</p>
-            <div class="d-flex">
-                <div class="contactName">
-                    <p>Whatsapp </p>
-                    <p>Email</p>
-                </div>
-                <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
-                    <p>Mantanant@mantanan.info</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "./footer.php" ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
-<?php
-
-    // if (isset($_GET['error'])) {
-    //     echo "<p class='error alert alert-danger'>";
-    //     echo $_GET['error'];
-    // }
-
-?>

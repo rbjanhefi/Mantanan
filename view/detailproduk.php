@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,37 +14,10 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/button.css">
     <title>Hello, world!</title>
-  </head>
-  <body>
-    <nav class="navbar sticky-top navbar-expand navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                logo
-            </a> 
-            <div class="collapse navbar-collapse text-light" id="navbarText">
-                <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto" >
-                    <li class="nav-item">
-                        <a class="nav-link text-light" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item activee">
-                        <a class="nav-link " href="#">Shop</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">Account</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-light" href="#">About</a>
-                    </li>
-                </ul>
-                <form class="d-flex me-3">
-                    <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
-                </form>
-                <span class="navbar-text">
-                    <button class="Cbtn btn-primary me-2" type="button">Login</button>
-                </span>
-            </div>
-        </div>
-    </nav>
+</head>
+
+<body>
+    <?php include "./navbar.php" ?>
     <section class="container d-flex justify-content-between mt-5">
         <div class="imgProduk ">
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -55,15 +29,15 @@
                         <img src="../../asset/img/hoodie.jpg" class="d-block " alt="...">
                     </div>
                 </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>  
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
         </div>
         <div class="detailProduk">
             <div class="harga shadow-sm border ps-5 d-flex flex-column">
@@ -85,15 +59,15 @@
     </section>
     <section class="deskripsiProduk border mt-5 m-auto  shadow">
         <div class="spesifikasiProduk">
-            <div class="judul p-1  m-4" >
+            <div class="judul p-1  m-4">
                 <h4>Spesifikasi Produk</h4>
             </div>
             <div class="d-flex ms-4 mt-3">
-                <label class="label text-muted" >Kategori</label>
+                <label class="label text-muted">Kategori</label>
                 <p class="ps-5">Hoodie</p>
             </div>
             <div class="d-flex ms-4">
-                <label class="label text-muted" >Asal Barang</label>
+                <label class="label text-muted">Asal Barang</label>
                 <p class="ps-4">Lokal</p>
             </div>
             <div class="d-flex ms-4">
@@ -106,7 +80,7 @@
             </div>
         </div>
         <div class="deskripsiProdukk">
-            <div class="judul p-1 m-4 " >
+            <div class="judul p-1 m-4 ">
                 <h4>Deskripsi Produk</h4>
             </div>
             <p class="m-4 text-xl-start">
@@ -134,36 +108,16 @@
             </p>
         </div>
     </section>
-    <footer class="bg-black w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5">
-        <div class="logo">
-            <p>ini Logo</p>
-        </div>
-        <div class="addres">
-            <p>Alamat</p>
-            <p>Sleman Yogyakarta</p>
-        </div>
-        <div class="contact">
-            <p>Contact</p>
-            <div class="d-flex">
-                <div class="contactName">
-                    <p>Whatsapp </p>
-                    <p>Email</p>
-                </div>
-                <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
-                    <p>Mantanant@mantanan.info</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "./footer.php" ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
 <?php
 
-    // if (isset($_GET['error'])) {
-    //     echo "<p class='error alert alert-danger'>";
-    //     echo $_GET['error'];
-    // }
+// if (isset($_GET['error'])) {
+//     echo "<p class='error alert alert-danger'>";
+//     echo $_GET['error'];
+// }
 
 ?>
