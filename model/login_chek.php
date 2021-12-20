@@ -2,13 +2,6 @@
 
 session_start();
 
-if(isset($_SESSION['email']) || isset($_COOKIE['user']) ){
-    header("location:../index.php");
-}
-
-include 'db_conn.php';
-
-
 //KONEKSI DATABASE
 include '../model/db_connect.php';
 
@@ -21,12 +14,12 @@ if(isset($_POST['login'])){
 
     //VALIDASI EMAIL KOSONG
     if(empty($email)){
-        header("location:../view/login.php?error=Please enter the email/username");
+        header("location:../view/page/login.php?error=Enter an email !");
         exit();
     }
     //VALIDASI PASSWORD KOSONG
     else if(empty($password)){
-        header("location:../view/login.php?error=Password Cannot be empty");
+        header("location:../view/page/login.php?error=Enter a password");
         exit();
     }
     //PENGECEKAN EMAIL DAN PASSWORD
@@ -39,24 +32,20 @@ if(isset($_POST['login'])){
             if($row['email']==$email && $row['password']==$password){
                 
                 //SESSION
-                $_SESSION['email'] = $row['email'];
-
-                //REMEMBER ME COOKIES
-                if($_POST['remember']==true){
-                    setcookie('user',$email,time()+3600);
-                  }
- 
+                $_SESSION['email'] = $email;
                 header("location:../index.php");
-                exit();
 
-            }else{
+            }
+            else{
 
-                header("location:../view/login.php?error=Salah username atau password ya!");
+                header("location:../view/page/login.php?error=Wrong password!");
                 exit();
             }
-        }else{
-            header("location:../view/login.php?error=Salah 2 susername atau password ya!");
+        }
+        else{
+            header("location:../view/page/login.php?error=Wrong password!");
             exit();
         }
     }
 }
+?>

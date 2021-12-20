@@ -14,7 +14,7 @@ if(isset($_POST['register'])){
 
 //VALIDASI REGISTER KOSONG
     if(empty($firstname) || empty($lastname) || empty($email) || empty($password) || empty($confirm)){
-        header("location:../view/register.php?error=Undefined cannot be left empty");
+        header("location:../view/page/register.php?error=Column cannot be empty!");
         exit();
     }
     // MENGECEK APAKAH ADA EMAIL SUDAH TERDAFTAR
@@ -26,7 +26,7 @@ if(isset($_POST['register'])){
             
             $row = mysqli_fetch_assoc($result);
             if($row['email']==$email){      
-                header("location:../view/register.php?error=Email has been registered");
+                header("location:../view/page/register.php?error=Email has been registered !");
                 exit();
             }
             
@@ -36,14 +36,14 @@ if(isset($_POST['register'])){
                 $sql = mysqli_query($conn, $query);
         
                 if($sql){
-                  header("location:../index.php");
+                  header("location:../view/page/login.php");
                 }else{
-                    header("location:../view/register.php?error=Registere failed");
+                    header("location:../view/page/register.php?error=Register failed !");
                 }
                 exit();
             
             }else{
-                header("location:../view/register.php?error=password didn't match");
+                header("location:../view/page/register.php?error=password didn't match !");
                 exit();
             }
         }
