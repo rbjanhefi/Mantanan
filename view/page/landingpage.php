@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse text-light" id="navbarText">
                     <ul class="navbar-nav mx-auto d-flex justify-content-between w-25 me-auto">
                         <li class="nav-item activee">
-                            <a class="nav-link text-activee" aria-current="page" href="#">Home</a>
+                            <a class="nav-link box text-activee" aria-current="page" href="#">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="#">Shop</a>
