@@ -1,10 +1,10 @@
 .activee {
-    background-color: #fff;
     height: 100%;
-    border-radius: 28px 28px 0px 0px;
+    border-radius: 8px 8px 0 0;
     border-top: 1px solid #fff;
     border-bottom: 0;
     position: relative;
+    background-color: #fff;
 }
 
 .text-activee{
@@ -16,22 +16,45 @@
     content:'';
     width:60px;
     height: 37px;
-    border:1px solid #160040;
     position:absolute;
     bottom: 0px;
-    top: 3px;
+    top: 7px;
     background-color: #160040;
     border-top:0;
 } 
-
 .activee:after{
     border-left:0;
-    border-radius: 0 0 15px 0;
-    left: -48px;
+    border-radius: 0 0 23px 0;
+    left: -60px;
 }
 
+
 .activee:before{
+    z-index: 1;
     border-right:0;
-    border-radius: 0 0 0 15px;
-    right: -48px;
+    border-radius: 0 0 0 23px;
+    right: -60px;
+}
+
+.box:after,
+.box:before{
+    content:'';
+    width:30px;
+    height: 37px;
+    position:absolute;
+    bottom: 0px;
+    top: 8px;
+    background-color: #ffffff;
+    border-top:0;
+} 
+
+.box:after{
+    border-left:0;
+    left: -25px;
+}
+
+
+.box:before{
+    border-right:0;
+    right: -25px;
 }
