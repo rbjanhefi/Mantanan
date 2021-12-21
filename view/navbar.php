@@ -28,7 +28,7 @@
                         <a class="nav-link text-light" aria-current="page"  href="#">Home</a>
                     </li>
                     <li class="nav-item activee">
-                        <a class="nav-link box" href="#">Shop</a>
+                        <a class="nav-link  box" href="#">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-light" href="#">Account</a>
@@ -50,3 +50,11 @@
 </body>
 
 </html>
+<?php
+
+// if (isset($_GET['error'])) {
+//     echo "<p class='error alert alert-danger'>";
+//     echo $_GET['error'];
+// }
+
+?>
