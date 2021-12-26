@@ -3,6 +3,13 @@ form .form-control:focus{
     box-shadow: none;
 }
 
+.content > form {
+    padding: 20px 0 0 40px;
+}
+
+.content > form .text-muted {
+    font-size: 15px !important;
+}
 
 
 .UploadProduk {
@@ -10,7 +17,22 @@ form .form-control:focus{
 }
 
 .left {
-    margin-left: 223px;
+    margin-left: 180px;
+}
+
+.col-sm-10,
+.dropdown,
+.form-floating {
+    margin-left: 65px !important;
+}
+
+.col-sm-2{
+    margin-left: 20px;
+}
+
+.form-label {
+    margin-left: 50px;
+    font-size: 15px !important;
 }
 
 
