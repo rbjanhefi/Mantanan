@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION['email'])) {
+    header("location:../view/login.php");
+}
+
+//KONEKSI KE DATABASE
+
+// // $result = mysqli_fetch_array($query);
+// $username = $result['username'];
+// $phone = $result['phone'];
+// $img = $result['file_picture'];
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -112,91 +129,35 @@
                     <p class="text-muted">Produk List</p>
                 </div>
                 <div class="produk p-2 ps-5 mt-3 d-flex flex-wrap">
-                    <div class="card shadow m-2" style="width: 12rem;">
-                        <img src="../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoodie</h5>
-                            <p class="card-text text-muted mb-0">Some quick example text to build on the card title and make.</p>
-                            <p class="harga mt-1 mb-2">Rp 80.000</p>
-                            <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                <a href="./postProduk.php">
-                                    <i class="ri-pencil-line"></i>
-                                </a>
-                                <div class="border-end"></div>
-                                <button>
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
+                    <?php
+                        include '../model/db_connect.php';
+
+                        //MENAMPILKAN ID DAN USERNAME
+                        $email = $_SESSION['email'];
+                        $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products where email ='$email'");
+
+                        while($row = mysqli_fetch_array($query)){
+                            echo ' 
+                            <div class="card shadow m-2" style="width: 12rem;">
+                                <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$row["product_name"].'</h5>
+                                    <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
+                                    <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
+                                    <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
+                                        <a href="./postProduk.php">
+                                            <i class="ri-pencil-line"></i>
+                                        </a>
+                                        <div class="border-end"></div>
+                                        <button>
+                                            <i class="ri-delete-bin-line"></i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="card shadow m-2" style="width: 12rem;">
-                        <img src="../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoodie</h5>
-                            <p class="card-text text-muted mb-0">Some quick example text to build on the card title and make.</p>
-                            <p class="harga mt-1 mb-2">Rp 80.000</p>
-                            <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                <a href="./postProduk.php">
-                                    <i class="ri-pencil-line"></i>
-                                </a>
-                                <div class="border-end"></div>
-                                <button>
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow m-2" style="width: 12rem;">
-                        <img src="../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoodie</h5>
-                            <p class="card-text text-muted mb-0">Some quick example text to </p>
-                            <p class="harga mt-1 mb-2">Rp 80.000</p>
-                            <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                <a href="./postProduk.php">
-                                    <i class="ri-pencil-line"></i>
-                                </a>
-                                <div class="border-end"></div>
-                                <button>
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow m-2" style="width: 12rem;">
-                        <img src="../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoodie</h5>
-                            <p class="card-text text-muted mb-0">Some quick example text to build on the card title and make.</p>
-                            <p class="harga mt-1 mb-2">Rp 80.000</p>
-                            <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                <a href="./postProduk.php">
-                                    <i class="ri-pencil-line"></i>
-                                </a>
-                                <div class="border-end"></div>
-                                <button>
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card shadow m-2" style="width: 12rem;">
-                        <img src="../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Hoodie</h5>
-                            <p class="card-text text-muted mb-0">Some quick example text to build on the card title and make.</p>
-                            <p class="harga mt-1 mb-2">Rp 80.000</p>
-                            <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                <a href="./postProduk.php">
-                                    <i class="ri-pencil-line"></i>
-                                </a>
-                                <div class="border-end"></div>
-                                <button>
-                                    <i class="ri-delete-bin-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                            ';
+                        }
+                    ?>
             </section>
         </main>
         <?php include "./footer.php" ?>

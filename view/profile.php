@@ -22,7 +22,7 @@ $phone = $result['phone'];
 $gender = $result['gender'];
 $birthdate = $result['birthdate'];
 $address = $result['address'];
-
+$img = $result['file_picture'];
 
 ?>
 
@@ -88,11 +88,11 @@ $address = $result['address'];
         <section class="sideNav d-flex flex-column justify-content-between shadow rounded  m-3 p-2">
             <div class="profile border-bottom rounded d-flex align-items-center p-2">
                 <div class="profile_img">
-                    <img src="../asset/img/profile.jpg" alt="">
+                    <img src="data:image/png;base64,<?=base64_encode($img)?>" alt="">
                 </div>
                 <div class="detail ms-3 h-75 d-flex flex-column">
-                    <p class="m-0">Bio Akhyar Janhefi</p>
-                    <p class="text-muted">081373817361</p>
+                    <p class="m-0"><?php echo"$username"?></p>
+                    <p class="text-muted"><?php echo"$phone"?></p>
                 </div>
             </div>
             <div class="navigasi">
@@ -134,7 +134,7 @@ $address = $result['address'];
             </div>
             <div class="data d-flex">
                 <div class="dataForm">
-                    <form class="ms-4 mt-3" method="POST" action="../model/profile_update.php">
+                    <form class="ms-4 mt-3" method="POST" action="../model/profile_update.php" enctype="multipart/form-data">
                         <?php
                         if (isset($_GET['error'])) {
                             echo "<p class='error alert alert-danger'>";
@@ -179,11 +179,13 @@ $address = $result['address'];
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted fs-6 ms-3">Gender</label>
                             <div class="col-sm-10 w-50 ms-5">
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                                    <input class="form-check-input" type="radio" name="gender" value="male" 
+                                    <?php if($gender=='male'){echo "checked";}?>>
                                     <label class="form-check-label" for="inlineRadio1">Male</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                    <input class="form-check-input" type="radio" name="gender" value="female"
+                                    <?php if($gender=='female'){echo "checked";}?>>
                                     <label class="form-check-label" for="inlineRadio2">Female</label>
                                 </div>
                             </div>
@@ -203,18 +205,21 @@ $address = $result['address'];
                         <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
                             <input type="submit" class="Cbtn" id="edit" name="edit"  value="Simpan">
                             <button class="Cbtn btn-danger"  type="button">Cancel</button>
-                        </div>
+                        </div> 
                     </form>
                 </div>
-                <div class="uploaudData d-flex flex-column justify-content-between">
-                    <div class="imageProduk ms-4 mt-3">
-                        <div class="w-100">
-                            <input class="form-control uploadFile"  type="file" id="formFileMultiple">
-                            <p class="text-muted fs-7 mb-0 mt-2 ">*Max file size 1MB</p>
-                            <p class="text-muted fs-7">*Format file = JPG/JPEG</p>
-                        </div>
-                    </div>
-                </div>
+                <form class="uploaudData d-flex flex-column justify-content-between" method="POST" action="../model/profile_picture.php" enctype="multipart/form-data">
+                            <div class="imageProduk ms-4 mt-3">
+                                <div class="w-100">
+                                    <input class="form-control uploadFile"  type="file" name="profile_picture" id="profile_picture">
+                                    <p class="text-muted fs-7 mb-0 mt-2 ">*Max file size 1MB</p>
+                                    <p class="text-muted fs-7">*Format file = JPG/JPEG</p>
+                                </div>
+                                <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
+                                    <input type="submit" class="Cbtn" id="save" name="save"  value="Save">
+                                </div> 
+                            </div>
+                </form> 
             </div>
         </section>
     </main>
