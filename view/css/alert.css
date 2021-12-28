@@ -1,0 +1,32 @@
+.error{
+    position: absolute;
+    
+    animation: loadPopUp 1s forwards;
+}
+
+.success{
+    position: absolute;
+    
+    animation: loadPopUp 1s forwards;
+}
+
+.close{
+    position: absolute;
+
+    color: darkred;
+}
+
+.login{
+    position: absolute;
+    color: darkgreen;
+
+}
+
+@keyframes loadPopUp {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}

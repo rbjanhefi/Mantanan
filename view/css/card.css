@@ -1,0 +1,51 @@
+.card-text  {
+    font-size: 12px;
+    height: 35px;
+    overflow-y: hidden;
+}
+
+.card {
+    cursor: pointer;
+    transition: .1s ease-in;
+}
+
+.card:hover {
+    box-shadow: none !important;
+    transform: scale(0.99);
+}
+
+.harga {
+    color: #160040;
+}
+
+.card > img {
+    height: 150px;
+    object-fit: cover;
+}
+
+
+
+.btnProduk > a {
+    color: #000 !important;
+}
+
+.btnProduk > a > i,
+.btnProduk> button > i{
+    font-size: 20px !important;
+}
+
+.btnProduk > a:hover ,
+.btnProduk> button:hover{
+    transform: scale(.9);
+}
+
+.btnProduk > button {
+    border: none;
+    background-color: #fff;
+}
+
+
+
+/* .card-body > .btn > * {
+    background-color: aqua;
+} */
