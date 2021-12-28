@@ -1,15 +1,9 @@
 <?php
-session_start(); 
+session_start();
+include '../../model/login_cookie.php';
 
-if(!isset($_SESSION['email']) ){
-  
-    header("location:view/page/login.php");
-  
-}else{
-    header('location:view/page/landingpage.php');
-  }
-
-    
+header('location:view/page/landingpage.php');
 ?>
+
 
 
