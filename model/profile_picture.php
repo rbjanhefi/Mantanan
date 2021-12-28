@@ -5,18 +5,19 @@
     include '../model/db_connect.php';
     
     if (isset($_POST['save'])){
-        $email = $_SESSION['email'];
+        if($_FILES['profile_picture']['name'] != '' ){
+            $email = $_SESSION['email'];
         //NAMA GAMBAR
         $image_name = $_FILES['profile_picture']['name'];
 
         //UKURAN GAMBAR
         $image_size = $_FILES['profile_picture']['size'];
 
-        $fileinfo = @getimagesize($_FILES["profile_picture"]["tmp_name"]);
-        //LEBAR GAMBAR
-        $width = $fileinfo[0];
-        //TINGGI GAMBAR
-        $height = $fileinfo[1];
+        // $fileinfo = @getimagesize($_FILES["profile_picture"]["tmp_name"]);
+        // //LEBAR GAMBAR
+        // $width = $fileinfo[0];
+        // //TINGGI GAMBAR
+        // $height = $fileinfo[1];
 
 
         //FILE GAMBAR
@@ -24,16 +25,22 @@
 
         //VALIDASI DAN PROSES UPLOAD FILE
         if($image_size > 1000000){
-            echo 'Ukuran gambar melebihi 80kb';
-        }else{
+            
+            header("location:../view/page/profile.php?error=Failed, Maximum image size 1MB!");
+        }
+        else{
             $query = "UPDATE users SET picture = '$image_name',file_picture = '$profile_picture' WHERE email='$email'";
             $sql=mysqli_query($conn,$query);
             
             if($sql){
-                echo "success";
+                header("location:../view/page/profile.php?success=Image upload has been successfull");
             }else{
-                echo "error";
+                header("location:../view/page/profile.php?error=Image upload failed");
             }
+        }
+        }
+        else{
+            header("location:../view/page/profile.php?error=No file chosen.");
         }
     }    
     
