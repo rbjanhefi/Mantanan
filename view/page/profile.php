@@ -123,7 +123,7 @@ include '../../model/profile_show.php';
                             
                         </li>
                         <li>
-                        <a href="procut.php"><i class="ri-apps-2-line"></i>My Product</li></a>
+                        <a href="product.php"><i class="ri-apps-2-line"></i>My Product</li></a>
                             
                     </ul>
                 </div>

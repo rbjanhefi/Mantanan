@@ -12,6 +12,7 @@ include '../../model/profile_show.php';
 //CEK DATA APAKAH SUDAH LENGKAP
 include '../../model/profile_chek.php';
 
+
 ?>
 
 <!doctype html>
@@ -32,6 +33,7 @@ include '../../model/profile_chek.php';
         <link rel="stylesheet" href="../css/button.css">
         <link rel="stylesheet" href="../css/font.css">
         <link rel="stylesheet" href="../css/profile.css">
+        <link rel="stylesheet" href="../css/alert.css">
         <title>Mantanan - My Product</title>
     </head>
     <div class="nav-main sticky-top">
@@ -140,14 +142,33 @@ include '../../model/profile_chek.php';
                 <div class="title border-bottom p-1 d-flex flex-column align-items-center">
                     <h3 class="mb-0">Produk</h3>
                     <p class="text-muted">Produk List</p>
+                    
+                </div>
+                <div class="" style="margin-top: 80px;">
+                            <?php
+                                if (isset($_GET['error'])){
+                                    
+                                    echo "<p class='error alert alert-danger' style='font-size:13px; width: 750px; top: 130px; '>";
+                                    echo "<a name='close' href='productUpload.php'><i class='close ri-close-line' style='left: 710px;'></i></a>";
+                                    echo $_GET['error'];
+                                }
+                                if(isset($_GET['success'])){
+                                    
+                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 750px; top: 130px; '>";
+                                  echo "<a name='close' href='productUpload.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
+                                  echo $_GET['success'];
+                              }
+
+                            ?>
                 </div>
                 <div class="produk p-2 ps-5 mt-3 d-flex flex-wrap">
+                
                     <?php
                         include '../../model/db_connect.php';
 
                         //MENAMPILKAN ID DAN USERNAME
                         $email = $_SESSION['email'];
-                        $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products where email ='$email'");
+                        $query = mysqli_query($conn, "select * from products where email ='$email'");
 
                         while($row = mysqli_fetch_array($query)){
                             echo ' 
@@ -158,12 +179,15 @@ include '../../model/profile_chek.php';
                                     <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
                                     <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
                                     <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
-                                        <a href="./postProduk.php">
+                                        <a href="productEdit.php?id='.$row['product_id'].'">
                                             <i class="ri-pencil-line"></i>
                                         </a>
                                         <div class="border-end"></div>
                                         <button>
+                                        <a href="../../model/product_delete.php?id='.$row['product_id'].'">
                                             <i class="ri-delete-bin-line"></i>
+                                        </a>
+                                            
                                         </button>
                                     </div>
                                 </div>
