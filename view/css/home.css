@@ -9,18 +9,20 @@ section.content {
     position: sticky;
 }
 
+
 .produk {
     width: 90%;
     height: 100%;
 }
 
 .card > img {
-    height: 120px !important;
+    max-height: 120px !important;
     object-fit: cover;
 }
 
 .card {
     height: 250px;
+    position: relative;
 }
 
 .card-text {
@@ -58,3 +60,11 @@ section.content {
     box-shadow: none !important;
 }
 
+.btn {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent !important;
+    border: none;
+}
