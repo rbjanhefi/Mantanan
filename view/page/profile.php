@@ -129,9 +129,9 @@ include '../../model/profile_show.php';
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <button class="Cbtn">Logout
+            <a class="Cbtn" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
-                </button>
+                </a>
             </div>
         </section>
         <section class="content shadow m-3 p-2">

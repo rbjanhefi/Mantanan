@@ -8,7 +8,7 @@ if (!isset($_SESSION['email'])) {
 
 //MENAMPILKAN INFORMASI PASSWORD
 include '../../model/db_connect.php';
-
+include '../../model/profile_show.php';
 $product_id=$_GET['id'];
 
 $query = mysqli_query($conn, "select * from products where product_id ='$product_id'");
@@ -16,7 +16,7 @@ $result = mysqli_fetch_array($query);
 
 $pname = $result['product_name'];
 $desc = $result['product_desc'];
-$category = $result['catergory'];
+$category = $result['category'];
 $brand = $result['product_brand'];
 $ori = $result['product_origin'];
 $price = $result['product_price'];
@@ -97,7 +97,7 @@ $pimg = $result['image_file'];
             <div class="profile border-bottom rounded d-flex align-items-center p-2">
                 <div class="profile_img">
                     <?php
-                    if($img==null){
+                    if($pimg==null){
                         echo'
                         <img src="../../asset/img/user.png" alt="">';
                     }
@@ -145,9 +145,9 @@ $pimg = $result['image_file'];
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <button class="Cbtn">Logout
+                <a class="Cbtn" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
-                </button>
+                </a>
             </div>
         </section>
         <section class="content shadow m-3 p-2">

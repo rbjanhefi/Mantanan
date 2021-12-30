@@ -1,7 +1,7 @@
 <?php
     include '../../model/db_connect.php';
 
-    $product_id='PRD00002';
+    $product_id= $_GET['product_id'];
     
     $query = mysqli_query($conn, "SELECT * FROM products INNER JOIN users ON products.email = users.email WHERE product_id = '$product_id'");
     $result = mysqli_fetch_array($query);

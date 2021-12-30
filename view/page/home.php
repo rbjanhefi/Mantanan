@@ -1,3 +1,15 @@
+<?php
+
+include '../../model/db_connect.php';
+
+$cari = "";
+if(isset($_POST['key'])){
+    $cari = $_POST['key'];
+    $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
+}else{
+    $query = mysqli_query($conn, "select * from products");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -38,8 +50,8 @@
                             <a class="nav-link text-light" href="#">About</a>
                         </li>
                     </ul>
-                    <form class="d-flex me-3">
-                        <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
+                    <form method="POST" class="d-flex me-3">
+                        <input class="form-control me-2 h-50" name="key" type="search" placeholder="Search" aria-label="Search">
                     
                     </form>
                     <!-- <div class="" style="width:50px; height:50px">
@@ -70,19 +82,31 @@
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Baju
+                        Fashion
                     </label>
                 </div>
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Celana
+                        Smartphone
                     </label>
                 </div>
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Kursi
+                        Tools & Hardware
+                    </label>
+                </div>
+                <div class="form-check mx-3 mt-2 mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Office & School
+                    </label>
+                </div>
+                <div class="form-check mx-3 mt-2 mb-2">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Electronic
                     </label>
                 </div>
             </div>
@@ -93,22 +117,20 @@
         <div class="containerProduk w-100 h-75">
             <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">
             <?php
-                            include '../model/db_connect.php';
-    
+  
                             //MENAMPILKAN ID DAN USERNAME
                             // $email = $_SESSION['email'];
-                            $query = mysqli_query($conn, "select product_id,image_file,product_name,product_desc,product_price from products");
-    
+                           
                             while($row = mysqli_fetch_array($query)){
                                 echo ' 
-                                <div href="./detailproduk" id="'.$row["product_id"].'" class="card shadow m-2" style="width: 12rem;">
+                                <div id="'.$row["product_id"].'" class="card shadow m-2" style="width: 12rem;">
                                     <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">'.$row["product_name"].'</h5>
                                         <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
                                         <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
                                     </div>
-                                    <a class="btn" href="./detailproduk.php" role="button"></a>
+                                    <a class="btn" href="./productDetail.php?product_id='.$row["product_id"].'" role="button"></a>
                                 </div>
                                 ';
                             }

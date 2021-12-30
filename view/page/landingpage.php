@@ -116,18 +116,19 @@ session_start();
     <section class="produkKami text-center">
         <h1>Produk Kami</h1>
         <div class="card-body w-100 d-flex justify-content-center">
-            <div class="card m-1" style="width: 10rem;">
-                <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
-            </div>
-            <div class="card m-1" style="width: 10rem;">
-                <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
-            </div>
-            <div class="card m-1" style="width: 10rem;">
-                <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
-            </div>
-            <div class="card m-1" style="width: 10rem;">
-                <img src="../../asset/img/man.jpg" class="card-img-top" alt="...">
-            </div>
+            <?php
+                include '../../model/db_connect.php';
+                $query = mysqli_query($conn, "select image_file from products limit 5");
+                while($row = mysqli_fetch_array($query)) {
+
+                
+                $image = $row['image_file'];
+                echo'<div class="card m-1" style="width: 10rem;">
+                    <img src="data:image/jpeg;base64,'.base64_encode($image).'" alt="...">
+                </div>';
+                 }   
+            ?>
+            
         </div>
     </section>
 </body>

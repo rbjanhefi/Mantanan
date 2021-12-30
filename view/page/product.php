@@ -12,7 +12,16 @@ include '../../model/profile_show.php';
 //CEK DATA APAKAH SUDAH LENGKAP
 include '../../model/profile_chek.php';
 
+include '../../model/db_connect.php';
 
+$email = $_SESSION['email'];
+$cari = "";
+if(isset($_POST['key'])){
+    $cari = $_POST['key'];
+    $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
+}else{
+    $query = mysqli_query($conn, "select * from products where email ='$email'");
+}
 ?>
 
 <!doctype html>
@@ -57,9 +66,8 @@ include '../../model/profile_chek.php';
                             <a class="nav-link text-light" href="#">About</a>
                         </li>
                     </ul>
-                    <form class="d-flex me-3">
-                        <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
-                    
+                    <form method="POST" class="d-flex me-3">
+                        <input class="form-control me-2 h-50" name="key" type="search" placeholder="Search" aria-label="Search">
                     </form>
                     <!-- <div class="" style="width:50px; height:50px">
                         <i style="width:40px;" class ="ri-account-circle-fill" >test</i>
@@ -133,9 +141,9 @@ include '../../model/profile_chek.php';
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <button class="Cbtn">Logout
+                <a class="Cbtn" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
-                </button>
+                </a>
             </div>
         </section>
             <section class="content shadow m-3 p-2">
@@ -149,13 +157,13 @@ include '../../model/profile_chek.php';
                                 if (isset($_GET['error'])){
                                     
                                     echo "<p class='error alert alert-danger' style='font-size:13px; width: 750px; top: 130px; '>";
-                                    echo "<a name='close' href='productUpload.php'><i class='close ri-close-line' style='left: 710px;'></i></a>";
+                                    echo "<a name='close' href='product.php'><i class='close ri-close-line' style='left: 710px;'></i></a>";
                                     echo $_GET['error'];
                                 }
                                 if(isset($_GET['success'])){
                                     
                                   echo "<p class='success alert alert-success' style='font-size:13px; width: 750px; top: 130px; '>";
-                                  echo "<a name='close' href='productUpload.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
+                                  echo "<a name='close' href='product.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
                                   echo $_GET['success'];
                               }
 
@@ -168,8 +176,7 @@ include '../../model/profile_chek.php';
 
                         //MENAMPILKAN ID DAN USERNAME
                         $email = $_SESSION['email'];
-                        $query = mysqli_query($conn, "select * from products where email ='$email'");
-
+                
                         while($row = mysqli_fetch_array($query)){
                             echo ' 
                             <div class="card shadow m-2" style="width: 12rem;">
