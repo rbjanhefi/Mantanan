@@ -37,7 +37,7 @@ if(isset($_POST['register'])){
         }
         else{
             if($password == $confirm){
-                $query = "INSERT INTO users(user_id,email,firstname,lastname,password,) VALUES ('$userid','$email','$firstname','$lastname','$password')";
+                $query = "INSERT INTO users(user_id,email,firstname,lastname,password) VALUES ('$userid','$email','$firstname','$lastname','$password')";
                 $sql = mysqli_query($conn, $query);
         
                 if($sql){
