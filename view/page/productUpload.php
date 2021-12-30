@@ -190,19 +190,16 @@ include '../../model/profile_chek.php';
                             </div>
                         </div>
                         <div class="row mb-3  ">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label text-muted  ">Category</label>
+                            <label for="inputPassword3" class="col-sm-2 text-muted  ">Category</label>
                             <div class="dropdown w-50 ">
-                                <a class="btn btn-outline-info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Category
-                                </a>
-    
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="#">Fashion</a></li>
-                                    <li><a class="dropdown-item" href="#">Smartphone</a></li>
-                                    <li><a class="dropdown-item" href="#">Tools & Hardware</a></li>
-                                    <li><a class="dropdown-item" href="#">Office & School</a></li>
-                                    <li><a class="dropdown-item" href="#">Electronic</a></li>
-                                </ul>
+                                    <select  name='category' id='category'>
+                                        <option value="" >Choose category</option>
+                                        <option value="Fashion" >Fashion</option>
+                                        <option value="Smartphone" >Smartphone</option>
+                                        <option value="Tools & Hardware" >Tools & Hardware</option>
+                                        <option value="Office & School" >Office & School</option>
+                                        <option value="Electronic" >Electronic</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="row mb-3">
