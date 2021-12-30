@@ -15,7 +15,7 @@
             $product_brand = $_POST['product_brand'];
             $product_origin = $_POST['product_origin'];
             $product_price = $_POST['product_price'];
-            // $category = $_POST['category'];
+            $category = $_POST['category'];
             $stock = $_POST['stock'];
 
             
@@ -43,8 +43,8 @@
                 header("location:../view/page/productUpload.php?error=Failed, Maximum image size 1MB!");
             }
             else{
-                $query = "INSERT INTO products (product_id, email , product_name , product_desc, product_brand, product_origin,stock,product_price,image,image_file) 
-                                        VALUES ('$productid','$email','$product_name','$product_desc','$product_brand','$product_origin','$stock','$product_price','$image_name','$product_image')";
+                $query = "INSERT INTO products (category,product_id, email , product_name , product_desc, product_brand, product_origin,stock,product_price,image,image_file) 
+                                        VALUES ('$category','$productid','$email','$product_name','$product_desc','$product_brand','$product_origin','$stock','$product_price','$image_name','$product_image')";
                 $sql=mysqli_query($conn,$query);
                 
                 if($sql){
