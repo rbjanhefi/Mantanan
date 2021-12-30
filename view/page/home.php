@@ -97,17 +97,18 @@
     
                             //MENAMPILKAN ID DAN USERNAME
                             // $email = $_SESSION['email'];
-                            $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products");
+                            $query = mysqli_query($conn, "select product_id,image_file,product_name,product_desc,product_price from products");
     
                             while($row = mysqli_fetch_array($query)){
                                 echo ' 
-                                <div class="card shadow m-2" style="width: 12rem;">
+                                <div href="./detailproduk" id="'.$row["product_id"].'" class="card shadow m-2" style="width: 12rem;">
                                     <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">'.$row["product_name"].'</h5>
                                         <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
                                         <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
                                     </div>
+                                    <a class="btn" href="./detailproduk.php" role="button"></a>
                                 </div>
                                 ';
                             }
@@ -128,7 +129,28 @@
             </nav>
         </div>
     </section>
-    <?php include "./footer.php" ?>
+    <footer class="w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5" style="background-color: #160040;">
+        <div class="logo">
+        <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
+        </div>
+        <div class="addres">
+            <p>Alamat</p>
+            <p>Sleman Yogyakarta</p>
+        </div>
+        <div class="contact">
+            <p>Contact</p>
+            <div class="d-flex">
+                <div class="contactName">
+                    <p>Whatsapp </p>
+                    <p>Email</p>
+                </div>
+                <div class="detailContact ms-lg-4">
+                    <p>+6285338562270</p>
+                    <p>Mantanant@mantanan.info</p>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
