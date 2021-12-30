@@ -90,27 +90,43 @@
                 <button class="shadow">Terapkan</button>
             </div>
         </div>
-        <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">
-        <?php
-                        include '../model/db_connect.php';
-
-                        //MENAMPILKAN ID DAN USERNAME
-                        // $email = $_SESSION['email'];
-                        $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products");
-
-                        while($row = mysqli_fetch_array($query)){
-                            echo ' 
-                            <div class="card shadow m-2" style="width: 12rem;">
-                                <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">'.$row["product_name"].'</h5>
-                                    <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
-                                    <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
+        <div class="containerProduk w-100 h-75">
+            <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">
+            <?php
+                            include '../model/db_connect.php';
+    
+                            //MENAMPILKAN ID DAN USERNAME
+                            // $email = $_SESSION['email'];
+                            $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products");
+    
+                            while($row = mysqli_fetch_array($query)){
+                                echo ' 
+                                <div class="card shadow m-2" style="width: 12rem;">
+                                    <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">'.$row["product_name"].'</h5>
+                                        <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
+                                        <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
+                                    </div>
                                 </div>
-                            </div>
-                            ';
-                        }
-                    ?>
+                                ';
+                            }
+                        ?>
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                    </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </section>
     <?php include "./footer.php" ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
