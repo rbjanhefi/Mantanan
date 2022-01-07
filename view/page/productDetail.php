@@ -33,7 +33,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/active.css">
-    <link rel="stylesheet" href="../css/card.css">
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/button.css">
     <link rel="stylesheet" href="../css/font.css">
@@ -137,7 +136,7 @@
             <div class="judul p-1  m-4">
                 <h4>Detail Product</h4>
             </div>
-            <div class="d-flex ms-4 mt-3 mb-3">
+            <div class="d-flex ms-4 mt-3">
                 <label class="label text-muted">Category</label>
                 <p class="ps-5"><?php echo $category?></p>
             </div>
@@ -158,29 +157,14 @@
             <div class="judul p-1 m-4 ">
                 <h4>Description</h4>
             </div>
-            <span class="m-4 text-xl-start">
+            <p class="m-4 text-xl-start">
                 <?php echo $desc?>
-                
-            </span>
-        </div>
-    </section>
-    <section class="recomend p-4">
-        <h4 class="ms-2">Produk serupa</h4>
-        <div class="produk p-2 mt-1 d-flex flex-wrap">
-            <div href="./detailproduk"  class="card shadow m-2" style="width: 12rem;">
-                <img src="../../asset/img/hoodie.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">hoodie</h5>
-                    <p class="card-text text-muted mb-0">huhuhuhuu</p>
-                    <p class="harga mt-1 mb-2">Rp.30000</p>
-                </div>
-                <a class="btn" href="./detailproduk.php" role="button"></a>
-            </div>
+            </p>
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
-<footer class="w-100 text-light d-flex p-lg-5 justify-content-evenly mt-3" style="background-color: #160040;">
+<footer class="w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5" style="background-color: #160040;">
         <div class="logo">
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>

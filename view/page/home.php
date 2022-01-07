@@ -4,28 +4,53 @@ include '../../model/db_connect.php';
 
 $cari = "";
 
+if(isset($_POST['key'])){
+    $cari = $_POST['key'];
+    $data = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
+}else if(isset($_POST['apply'])){
+    if(empty($_POST['cat'])){
+        $data = mysqli_query($conn, "SELECT * FROM products");       
+    }else{
+        $cari = $_POST['cat'];
+        if(count($cari) > 1){
+        $data = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "')");
+        }else{
+        $a=$cari[0];
+        $data = mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'");
+     }   
+    }
+}else{
+    $data = mysqli_query($conn, "SELECT * FROM products");
+}
 
 $totalpageshow = 2;
-$data = mysqli_query($conn, "select * from products");
 $totaldata=mysqli_num_rows($data);
 $totalpage = ceil($totaldata/$totalpageshow); 
 $activepage = (isset($_GET['pages'])) ? $_GET['pages'] : 1;
 $firstpage = ($totalpageshow*$activepage)- $totalpageshow;
 
-var_dump((int)$totalpage);
-var_dump((int)$activepage);
-
-
 
 if(isset($_POST['key'])){
     $cari = $_POST['key'];
-    $query = mysqli_query($conn, "SELECT * FROM `products` LIMIT $firstpage,$totalpageshow WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
+    $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%' LIMIT $firstpage,$totalpageshow");
+}else if(isset($_POST['apply'])){
+    if(empty($_POST['cat'])){
+        $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");       
+    }else{
+        $cari = $_POST['cat'];
+        if(count($cari) > 1){
+        $query = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "') LIMIT $firstpage,$totalpageshow");
+        }else{
+        $a=$cari[0];
+        $query= mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'LIMIT $firstpage,$totalpageshow");
+     }   
+    }
 }else{
     $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");
 }
 
-
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -93,42 +118,44 @@ if(isset($_POST['key'])){
         <div class="kategori shadow m-3 mt-lg-3 ">
             <div class="title m-3">
                 <p>Kategori</p>
-            </div>
-            <div class="checkbok ps-2">
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Fashion
-                    </label>
                 </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Smartphone
-                    </label>
-                </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Tools & Hardware
-                    </label>
-                </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Office & School
-                    </label>
-                </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Electronic
-                    </label>
-                </div>
-            </div>
-            <div class="terapkan">
-                <button class="shadow">Terapkan</button>
-            </div>
+            <form action="" method="POST" >
+                <div class="checkbok ps-2">
+                    <div class="form-check mx-3 mt-2 mb-2">
+                        <input class="form-check-input" type="checkbox" name="cat[]" value="Fashion" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Fashion
+                        </label>
+                    </div>
+                    <div class="form-check mx-3 mt-2 mb-2">
+                        <input class="form-check-input" type="checkbox" name="cat[]" value="Smartphone" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Smartphone
+                        </label>
+                    </div>
+                    <div class="form-check mx-3 mt-2 mb-2">
+                        <input class="form-check-input" type="checkbox" name="cat[]" value="Tools & Hardware" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Tools & Hardware
+                        </label>
+                    </div>
+                    <div class="form-check mx-3 mt-2 mb-2">
+                        <input class="form-check-input" type="checkbox" name="cat[]" value="Office & School" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Office & School
+                        </label>
+                    </div>
+                    <div class="form-check mx-3 mt-2 mb-2">
+                        <input class="form-check-input" type="checkbox" name="cat[]" value="Electronic" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Electronic
+                        </label>
+                    </div>
+                </div>   
+                <div class="apply">
+                    <input type="submit" value="Apply" name="apply" class="shadow">
+                </div> 
+            </form>
         </div>
         <div class="containerProduk w-100 h-75">
             <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">

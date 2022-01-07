@@ -37,16 +37,16 @@ section.content {
     cursor: pointer;
 }
 
-.terapkan {
+.apply {
     position: absolute;
     bottom: 0;
     margin: 10px;
     width: 100% !important;
 }
 
-.terapkan > button {
-    width: 92%;
-    height: 40px;
+.apply > input[type='submit'] {
+    width: 92% !important;
+    height: 40px !important;
     background-color: #160040;
     border: none;
     color: #fff;
@@ -55,7 +55,7 @@ section.content {
     transform: translateY(0);
 }
 
-.terapkan > button:active {
+.apply > input[type='submit']:active {
     transform: translateY(5px) !important;
     box-shadow: none !important;
 }

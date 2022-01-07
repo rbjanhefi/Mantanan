@@ -141,7 +141,7 @@ if(isset($_POST['key'])){
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
+            <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
                 </a>
             </div>
@@ -162,8 +162,8 @@ if(isset($_POST['key'])){
                                 }
                                 if(isset($_GET['success'])){
                                     
-                                  echo "<p class='success alert alert-success ms-5' style='font-size:13px; width: 825px; top: 130px; '>";
-                                  echo "<a name='close' href='product.php'><i class='login ri-close-line' style='right: 0px;'></i></a>";
+                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 750px; top: 130px; '>";
+                                  echo "<a name='close' href='product.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
                                   echo $_GET['success'];
                               }
 

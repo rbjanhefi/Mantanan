@@ -134,7 +134,7 @@ include '../../model/profile_chek.php';
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
+            <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
                 </a>
             </div>
@@ -190,7 +190,7 @@ include '../../model/profile_chek.php';
                             </div>
                         </div>
                         <div class="row mb-3  ">
-                        <label for="inputPassword3" class="col-sm-2 text-muted  ">Category</label>
+                            <label for="inputPassword3" class="col-sm-2 text-muted  ">Category</label>
                             <div class="dropdown w-50 ">
                                     <select  name='category' id='category'>
                                         <option value="" >Choose category</option>
