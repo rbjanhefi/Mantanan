@@ -145,7 +145,7 @@ $pimg = $result['image_file'];
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-                <a class="Cbtn" href="../../model/login_out.php">Logout
+                <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
                 </a>
             </div>
@@ -168,7 +168,7 @@ $pimg = $result['image_file'];
                                 }
                                 if(isset($_GET['success'])){
                                     
-                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 500px; top: 130px; '>";
+                                  echo "<p class='success alert alert-success ' style='font-size:13px; width: 500px; top: 130px;'>";
                                   echo "<a name='close' href='profile.php'><i class='login ri-close-line' style='left: 460px;'></i></a>";
                                   echo $_GET['success'];
                               }
@@ -223,7 +223,7 @@ $pimg = $result['image_file'];
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ms-3 text-muted  ">Stock</label>
                             <div class="col-sm-10 val w-25 ">
                                 <input type="number" name="stock" class="form-control" id="inputEmail3" value="<?php echo $stock ?>">
-                            </div>
+                            </div> 
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ms-3 text-muted  ">Price</label>
@@ -231,7 +231,7 @@ $pimg = $result['image_file'];
                                 <input type="number" name="product_price" class="form-control" id="inputEmail3" value="<?php echo $price ?>">
                             </div>
                         </div>
-                        <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
+                        <div class="d-grid mb-2  mt-5 gap-2 w-75 bottom-0  d-md-flex w-75 me-5 justify-content-end">
                             <input type="submit" class="Cbtn" id="edit" name="update"  value="Update">
                         </div> 
                     </form>
