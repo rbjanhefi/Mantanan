@@ -30,9 +30,11 @@
 }
 
 .btnProduk > a > i,
-.btnProduk> button > i{
+.btnProduk> button >a >i{
     font-size: 20px !important;
+    color: #000 !important;
 }
+
 
 .btnProduk > a:hover ,
 .btnProduk> button:hover{
@@ -43,9 +45,3 @@
     border: none;
     background-color: #fff;
 }
-
-
-
-/* .card-body > .btn > * {
-    background-color: aqua;
-} */
