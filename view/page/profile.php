@@ -219,19 +219,19 @@ include '../../model/profile_show.php';
                                 <input type="text" class="form-control" id="inputEmail3" name="address" value="<?php echo $address ?>">
                             </div>
                         </div>
-                        <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
+                        <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 justify-content-center">
                             <input type="submit" class="Cbtn" id="edit" name="edit"  value="Update">
-                        </div> 
+                        </div>
                     </form>
                 </div>
-                <form class="uploaudData d-flex flex-column justify-content-between" method="POST" action="../../model/profile_picture.php" enctype="multipart/form-data">
+                <form class="uploadData d-flex flex-column justify-content-between" method="POST" action="../../model/profile_picture.php" enctype="multipart/form-data">
                             <div class="imageProduk ms-4 mt-3">
                                 <div class="w-100">
                                     <input class="form-control uploadFile"  type="file" name="profile_picture" id="profile_picture">
                                     <p class="text-muted fs-7 mb-0 mt-2 ">*Max file size 1MB</p>
                                     <p class="text-muted fs-7">*Format file = JPG/JPEG</p>
                                 </div>
-                                <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
+                                <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-center">
                                     <input type="submit" class="Cbtn" id="save" name="save"  value="Save">
                                 </div> 
                             </div>

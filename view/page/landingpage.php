@@ -76,17 +76,14 @@ session_start();
                 <div class="carousel-item">
                     <img src="../../asset/img/donation2.jpg" class="d-block w-100" alt="...">
                 </div>
-                <div class="carousel-item">
-                    <img src="../../asset/img/donation3.jpg" class="d-block w-100" alt="...">
-                </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
             <div class="titleCaroussel position-absolute top-0 text-light">
-                <h1>Ayo Jual Barang Bekas Anda Sekarang</h1>
-                <p>Barang bekas yang masih layak pakai dapat anda jual/donasikan kepada orang yang membutuhkan. <br>Ayo jual barang bekas anda sekarang!</p>
+                <h1>Let's sell your second-hand products now</h1>
+                <p>You can sell/donate second-hand products that are still good for use.<br> Let's sell your second-hand now!</p>
                 <button type="button" class="btn text-light"style="background-color: #9A0680;"><a href="login.php" style="text-decoration: none; color:white;">LOGIN NOW</a></button>
             </div>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
@@ -102,19 +99,19 @@ session_start();
         <div class="visiMisi d-flex justify-content-center">
             <div class="detailvisiMisi rounded shadow-sm h-100 w-75 p-5">
             <h2 class="d-flex justify-content-center" style="margin-bottom: 10px; "><span class="logo">M</span><span class="antanan">antanan</span> </h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi quae soluta quas exercitationem quia labore impedit suscipit amet, consequuntur, minus architecto ratione ea cumque quam rem totam unde officia obcaecati nemo tempore quidem odit? Harum commodi libero minus et architecto, optio illo voluptas earum perferendis ducimus, asperiores fugit quod corrupti!
+                <p align="center">
+                    Mantanan is a startup that helps you find second-hand items that are worth using. You can also find generic and unique items that are surprisingly cheap and of good quality. You can also sell and promote your goods on this website. What are you waiting for, let's register your used items right away or items that may be new but never used.
                 </p>
             </div>
         </div>
     </section>
     <section class="bannerJoin w-100 d-flex align-items-center justify-content-evenly mb-5" style="background-color: #160040;">
-        <h3>Ayo Jual/Donasikan Barang Bekas Layak Pakai Anda Sekarang!</h3>
+        <h3>Do you have any old stuff that can still be used ? Let's sell now !!!</h3>
         <!-- <button type="button" class="btn btn-outline-success">Join Sekarang</button> -->
         <button class="Cbtn btn me-2 text-light" type="button" style="background-color: #9A0680;"><a href="register.php" style="text-decoration: none; color:white;">JOIN</a></button>
     </section>
     <section class="produkKami text-center">
-        <h1>Produk Kami</h1>
+        <h1>Our Product</h1>
         <div class="card-body w-100 d-flex justify-content-center">
             <?php
                 include '../../model/db_connect.php';
@@ -137,7 +134,7 @@ session_start();
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
-            <p>Alamat</p>
+            <p>Address</p>
             <p>Sleman Yogyakarta</p>
         </div>
         <div class="contact">
@@ -148,7 +145,7 @@ session_start();
                     <p>Email</p>
                 </div>
                 <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
+                    <p>+62 812 3457 8944</p>
                     <p>Mantanant@mantanan.info</p>
                 </div>
             </div>

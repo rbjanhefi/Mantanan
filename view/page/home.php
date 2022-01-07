@@ -127,12 +127,12 @@ else{
     <section class="content d-flex mt-5">
         <div class="kategori shadow m-3 mt-lg-3 ">
             <div class="title m-3">
-                <p>Kategori</p>
+                <p>Category</p>
                 </div>
             <form action="?pages=1" method="POST" >
                 <div class="checkbok ps-2">
                     <?php 
-                        $cat_data = mysqli_query($conn, "SELECT * FROM categories");
+                        $cat_data = mysqli_query($conn, "SELECT * FROM categories order by name asc");
                         while($row = mysqli_fetch_array($cat_data)){
                             echo ' 
                            
@@ -199,7 +199,7 @@ else{
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
-            <p>Alamat</p>
+            <p>Address</p>
             <p>Sleman Yogyakarta</p>
         </div>
         <div class="contact">
@@ -210,7 +210,7 @@ else{
                     <p>Email</p>
                 </div>
                 <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
+                    <p>+62 812 3457 8944</p>
                     <p>Mantanant@mantanan.info</p>
                 </div>
             </div>

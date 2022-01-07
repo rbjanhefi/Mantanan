@@ -62,7 +62,7 @@
 
                 <div class="form-group" style="margin-top: 40px;">
                     <label for="" class="form-label fs-6">Email</label>
-                    <input class="form-control" type="email" name="email" id="email" >
+                    <input class="form-control" type="email" autocomplete="off" name="email" id="email" >
                 </div>
 
                 <div class="form-group">

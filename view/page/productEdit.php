@@ -184,7 +184,7 @@ $pimg = $result['image_file'];
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted ms-3">Product Name</label>
                             <div class="col-sm-10 val w-50 ">
-                                <input type="text" class="form-control" name="product_name" id="inputEmail3" value="<?php echo $pname ?>">
+                                <input type="text" class="form-control" autocomplete="off" name="product_name" id="inputEmail3" value="<?php echo $pname ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -214,13 +214,13 @@ $pimg = $result['image_file'];
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ms-3 text-muted  ">Brand</label>
                             <div class="col-sm-10 val w-50 ">
-                                <input type="text" name="product_brand" class="form-control" id="inputEmail3" value="<?php echo $brand ?>">
+                                <input type="text" name="product_brand" autocomplete="off" class="form-control" id="inputEmail3" value="<?php echo $brand ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ms-3 text-muted  ">Place of Origin</label>
                             <div class="col-sm-10 val w-50 ">
-                                <input type="text" name="product_origin" class="form-control" id="inputEmail3" value="<?php echo $ori ?>">
+                                <input type="text" name="product_origin" autocomplete="off" class="form-control" id="inputEmail3" value="<?php echo $ori ?>">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -235,7 +235,7 @@ $pimg = $result['image_file'];
                                 <input type="number" name="product_price" class="form-control" id="inputEmail3" value="<?php echo $price ?>">
                             </div>
                         </div>
-                        <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-end">
+                        <div class="d-grid mb-2 mt-5 gap-2 w-75 bottom-0  d-md-flex w-100 me-5 justify-content-center">
                             <input type="submit" class="Cbtn" id="edit" name="update"  value="Update">
                         </div> 
                     </form>
@@ -256,7 +256,7 @@ $pimg = $result['image_file'];
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
-            <p>Alamat</p>
+            <p>Address</p>
             <p>Sleman Yogyakarta</p>
         </div>
         <div class="contact">

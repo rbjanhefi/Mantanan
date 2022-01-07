@@ -209,7 +209,7 @@ if(isset($_POST['key'])){
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
-            <p>Alamat</p>
+            <p>Address</p>
             <p>Sleman Yogyakarta</p>
         </div>
         <div class="contact">
@@ -220,12 +220,12 @@ if(isset($_POST['key'])){
                     <p>Email</p>
                 </div>
                 <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
+                    <p>+62 812 3457 8944</p>
                     <p>Mantanant@mantanan.info</p>
                 </div>
             </div>
         </div>
-    </footer>s
+    </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
         </script>

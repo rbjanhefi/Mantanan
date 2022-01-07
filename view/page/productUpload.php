@@ -120,7 +120,7 @@ include '../../model/profile_chek.php';
                 </div>
                 <div class="product">
                     <div class="title m-2 text-muted">
-                        <p>PRODUK</p>
+                        <p>PRODUCT</p>
                     </div>
                     <ul>
                         <li class="activeSideNav">
@@ -141,7 +141,7 @@ include '../../model/profile_chek.php';
         </section>
         <section class="content shadow m-3 p-2">
             <div class="title border-bottom p-1 d-flex flex-column align-items-center">
-                <h2 class="mb-0">Produk</h2>
+                <h2 class="mb-0">Product</h2>
                 <p class="text-muted">Upload your produk</p>
             </div>
             <form method="POST" action="../../model/product_upload.php" enctype="multipart/form-data">
@@ -179,14 +179,14 @@ include '../../model/profile_chek.php';
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted   text-muted">Product Name</label>
                             <div class="col-sm-10 w-50 ">
-                                <input type="text" class="form-control" name="product_name" id="inputEmail3">
+                                <input type="text" class="form-control" autocomplete="off" name="product_name" id="inputEmail3">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputPassword3" class="col-sm-2 col-form-label text-muted  ">Description</label>
                             <div class="form-floating w-50 ">
                                 <textarea class="form-control" name="product_desc" placeholder="Deskripsi Produk" id="floatingTextarea2" style="height: 150px"></textarea>
-                                <label for="floatingTextarea2" class="ms-2">Deskripsi</label>
+                                <label for="floatingTextarea2" class="ms-2">Description</label>
                             </div>
                         </div>
                         <div class="row mb-3  ">
@@ -211,13 +211,13 @@ include '../../model/profile_chek.php';
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ">Brand</label>
                             <div class="col-sm-10 w-50 ">
-                                <input type="text" name="product_brand" class="form-control" id="inputEmail3">
+                                <input type="text" name="product_brand" autocomplete="off" class="form-control" id="inputEmail3">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <label for="inputEmail3" class="col-sm-2 col-form-label text-muted  ">Place of Origin</label>
                             <div class="col-sm-10 w-50 ">
-                                <input type="text" name="product_origin" class="form-control" id="inputEmail3">
+                                <input type="text" name="product_origin" autocomplete="off" class="form-control" id="inputEmail3">
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -232,7 +232,7 @@ include '../../model/profile_chek.php';
                                 <input type="number" name="product_price" class="form-control" id="inputEmail3">
                             </div>
                         </div>
-                        <div class="d-grid gap-2 w-75 mb-5 mt-5 d-md-flex justify-content-md-end">
+                        <div class="d-grid gap-2 w-75 mb-5 mt-5 d-md-flex justify-content-center">
                             <input type="submit" class="Cbtn  btn-primary me-md-2" name="upload" id="upload" type="button" value="Upload">
                         </div>
                     </div>
@@ -246,7 +246,7 @@ include '../../model/profile_chek.php';
         <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
         </div>
         <div class="addres">
-            <p>Alamat</p>
+            <p>Address</p>
             <p>Sleman Yogyakarta</p>
         </div>
         <div class="contact">
@@ -257,7 +257,7 @@ include '../../model/profile_chek.php';
                     <p>Email</p>
                 </div>
                 <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
+                    <p>+62 812 3457 8944</p>
                     <p>Mantanant@mantanan.info</p>
                 </div>
             </div>

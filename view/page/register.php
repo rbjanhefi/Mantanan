@@ -35,11 +35,11 @@
             </div>
             <div class="col-md-6 " style="margin-top: 5px;">
               <label for="first-name" class="form-label fs-6">First Name</label>
-              <input type="text" name="firstname" id="firstname" class="form-control">
+              <input type="text" autocomplete="off" name="firstname" id="firstname" class="form-control">
             </div>
             <div class="col-md-6 " style="margin-top: 5px;">
               <label for="last-name" class="form-label fs-6">Last Name</label>
-              <input type="text" name="lastname" id="lastname" class="form-control">
+              <input type="text" name="lastname" autocomplete="off" id="lastname" class="form-control">
             </div>
             <!-- <div class="col-12 "  style="margin-top: 5px;">
               <label for="username" class="form-label fs-6">Username</label>
@@ -47,7 +47,7 @@
             </div> -->
             <div class="col-12 "  style="margin-top: 5px;">
               <label for="email " class="form-label fs-6">Email</label>
-              <input type="email" class="form-control" name="email" id="email">
+              <input type="email" autocomplete="off" class="form-control" name="email" id="email">
             </div>
             <div class="col-12" style="margin-top: 5px;">
               <label for="password" class="form-label fs-6">Password</label>

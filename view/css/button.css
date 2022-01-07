@@ -1,6 +1,7 @@
 .Cbtn {
     width: 100px;
     height: 35px;
+    align-self: center;
     border-radius: 5px;
     border: none;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2);
