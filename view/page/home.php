@@ -1,15 +1,3 @@
-<?php
-
-include '../../model/db_connect.php';
-
-$cari = "";
-if(isset($_POST['key'])){
-    $cari = $_POST['key'];
-    $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
-}else{
-    $query = mysqli_query($conn, "select * from products");
-}
-?>
 <!doctype html>
 <html lang="en">
 
@@ -50,8 +38,8 @@ if(isset($_POST['key'])){
                             <a class="nav-link text-light" href="#">About</a>
                         </li>
                     </ul>
-                    <form method="POST" class="d-flex me-3">
-                        <input class="form-control me-2 h-50" name="key" type="search" placeholder="Search" aria-label="Search">
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2 h-50" type="search" placeholder="Search" aria-label="Search">
                     
                     </form>
                     <!-- <div class="" style="width:50px; height:50px">
@@ -82,31 +70,19 @@ if(isset($_POST['key'])){
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Fashion
+                        Baju
                     </label>
                 </div>
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Smartphone
+                        Celana
                     </label>
                 </div>
                 <div class="form-check mx-3 mt-2 mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                        Tools & Hardware
-                    </label>
-                </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Office & School
-                    </label>
-                </div>
-                <div class="form-check mx-3 mt-2 mb-2">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        Electronic
+                        Kursi
                     </label>
                 </div>
             </div>
@@ -114,65 +90,29 @@ if(isset($_POST['key'])){
                 <button class="shadow">Terapkan</button>
             </div>
         </div>
-        <div class="containerProduk w-100 h-75">
-            <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">
-            <?php
-  
-                            //MENAMPILKAN ID DAN USERNAME
-                            // $email = $_SESSION['email'];
-                           
-                            while($row = mysqli_fetch_array($query)){
-                                echo ' 
-                                <div id="'.$row["product_id"].'" class="card shadow m-2" style="width: 12rem;">
-                                    <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
-                                    <div class="card-body">
-                                        <h5 class="card-title">'.$row["product_name"].'</h5>
-                                        <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
-                                        <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
-                                    </div>
-                                    <a class="btn" href="./productDetail.php?product_id='.$row["product_id"].'" role="button"></a>
+        <div class="produk p-2 ps-5 mt-1 d-flex flex-wrap">
+        <?php
+                        include '../model/db_connect.php';
+
+                        //MENAMPILKAN ID DAN USERNAME
+                        // $email = $_SESSION['email'];
+                        $query = mysqli_query($conn, "select image_file,product_name,product_desc,product_price from products");
+
+                        while($row = mysqli_fetch_array($query)){
+                            echo ' 
+                            <div class="card shadow m-2" style="width: 12rem;">
+                                <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">'.$row["product_name"].'</h5>
+                                    <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
+                                    <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
                                 </div>
-                                ';
-                            }
-                        ?>
-            </div>
-            <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
-                    </li>
-                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item">
-                        <a class="page-link" href="#">Next</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                            </div>
+                            ';
+                        }
+                    ?>
     </section>
-    <footer class="w-100 text-light d-flex p-lg-5 justify-content-evenly mt-5" style="background-color: #160040;">
-        <div class="logo">
-        <span class="logo">M</span><span class="antanan text-light fs-6" >antanan</span>
-        </div>
-        <div class="addres">
-            <p>Alamat</p>
-            <p>Sleman Yogyakarta</p>
-        </div>
-        <div class="contact">
-            <p>Contact</p>
-            <div class="d-flex">
-                <div class="contactName">
-                    <p>Whatsapp </p>
-                    <p>Email</p>
-                </div>
-                <div class="detailContact ms-lg-4">
-                    <p>+6285338562270</p>
-                    <p>Mantanant@mantanan.info</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "./footer.php" ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
