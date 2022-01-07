@@ -134,7 +134,7 @@
                 </div>
             </div>
             <div class="logout ms-2 mb-1">
-            <a class="Cbtn" href="../../model/login_out.php">Logout
+            <a class="Cbtn d-flex align-items-center justify-content-center" href="../../model/login_out.php">Logout
                     <i class="ri-logout-circle-r-line"></i>
                 </a>
             </div>
