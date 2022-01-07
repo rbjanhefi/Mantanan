@@ -21,7 +21,9 @@
     object-fit: contain;
 } 
 
-
+.card-body {
+    height: 120px;
+}
 
 .profil > img {
     width: 50px;
