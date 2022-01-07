@@ -34,3 +34,18 @@ form .form-control:focus{
     font-size: 15px !important;
 }
 
+.row > .dropdown > #category{
+    background-color: #fff;
+    border: 1px solid #160040;
+    border-radius: 5px;
+    height: 35px;
+    padding: 5px;
+    cursor: pointer;
+
+}
+
+select#category{
+    border: none;
+    outline: none;
+}
+
