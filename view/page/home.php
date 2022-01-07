@@ -2,24 +2,31 @@
 
 include '../../model/db_connect.php';
 
-$cari = "";
+
 
 if(isset($_POST['key'])){
     $cari = $_POST['key'];
     $data = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
-}else if(isset($_POST['apply'])){
+
+}
+else if(isset($_POST['apply'])){
+
     if(empty($_POST['cat'])){
         $data = mysqli_query($conn, "SELECT * FROM products");       
-    }else{
-        $cari = $_POST['cat'];
-        if(count($cari) > 1){
-        $data = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "')");
-        }else{
-        $a=$cari[0];
-        $data = mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'");
-     }   
     }
-}else{
+    else{
+        $cari = $_POST['cat'];
+        
+        if(count($cari) > 1){
+            $data = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "')");
+        }
+        else{
+            $a=$cari[0];
+            $data = mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'");
+        }   
+    }
+}
+else{
     $data = mysqli_query($conn, "SELECT * FROM products");
 }
 
@@ -29,23 +36,26 @@ $totalpage = ceil($totaldata/$totalpageshow);
 $activepage = (isset($_GET['pages'])) ? $_GET['pages'] : 1;
 $firstpage = ($totalpageshow*$activepage)- $totalpageshow;
 
-
 if(isset($_POST['key'])){
     $cari = $_POST['key'];
     $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%' LIMIT $firstpage,$totalpageshow");
 }else if(isset($_POST['apply'])){
+    
     if(empty($_POST['cat'])){
         $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");       
-    }else{
+    }
+    else{
         $cari = $_POST['cat'];
         if(count($cari) > 1){
-        $query = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "') LIMIT $firstpage,$totalpageshow");
-        }else{
-        $a=$cari[0];
-        $query= mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'LIMIT $firstpage,$totalpageshow");
-     }   
+            $query = mysqli_query($conn, "SELECT * FROM products WHERE category IN ('" . implode("','", $cari) . "') LIMIT $firstpage,$totalpageshow");
+        }
+        else{
+            $a=$cari[0];
+            $query= mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'LIMIT $firstpage,$totalpageshow");
+        }   
     }
-}else{
+}
+else{
     $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");
 }
 
@@ -91,7 +101,7 @@ if(isset($_POST['key'])){
                             <a class="nav-link text-light" href="#">About</a>
                         </li>
                     </ul>
-                    <form method="POST" class="d-flex me-3">
+                    <form action="?pages=1" method="POST" class="d-flex me-3">
                         <input class="form-control me-2 h-50" name="key" type="search" placeholder="Search" aria-label="Search">
                     
                     </form>
@@ -119,38 +129,24 @@ if(isset($_POST['key'])){
             <div class="title m-3">
                 <p>Kategori</p>
                 </div>
-            <form action="" method="POST" >
+            <form action="?pages=1" method="POST" >
                 <div class="checkbok ps-2">
-                    <div class="form-check mx-3 mt-2 mb-2">
-                        <input class="form-check-input" type="checkbox" name="cat[]" value="Fashion" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Fashion
-                        </label>
-                    </div>
-                    <div class="form-check mx-3 mt-2 mb-2">
-                        <input class="form-check-input" type="checkbox" name="cat[]" value="Smartphone" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Smartphone
-                        </label>
-                    </div>
-                    <div class="form-check mx-3 mt-2 mb-2">
-                        <input class="form-check-input" type="checkbox" name="cat[]" value="Tools & Hardware" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Tools & Hardware
-                        </label>
-                    </div>
-                    <div class="form-check mx-3 mt-2 mb-2">
-                        <input class="form-check-input" type="checkbox" name="cat[]" value="Office & School" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Office & School
-                        </label>
-                    </div>
-                    <div class="form-check mx-3 mt-2 mb-2">
-                        <input class="form-check-input" type="checkbox" name="cat[]" value="Electronic" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                            Electronic
-                        </label>
-                    </div>
+                    <?php 
+                        $cat_data = mysqli_query($conn, "SELECT * FROM categories");
+                        while($row = mysqli_fetch_array($cat_data)){
+                            echo ' 
+                           
+                            <div class="form-check mx-3 mt-2 mb-2">
+                                <input class="form-check-input" type="checkbox" name="cat[]" value='.$row["name"].' id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                '.$row["name"].'
+                                </label>
+                            </div>'
+                            ;
+                        }
+                    ?>
+                   
+          
                 </div>   
                 <div class="apply">
                     <input type="submit" value="Apply" name="apply" class="shadow">

@@ -199,11 +199,15 @@ $pimg = $result['image_file'];
                             <div class="dropdown w-50 ">
                                     <select  name='category' id='category'>
                                         <option value="" >Choose category</option>
-                                        <option value="Fashion" >Fashion</option>
-                                        <option value="Smartphone" >Smartphone</option>
-                                        <option value="Tools & Hardware" >Tools & Hardware</option>
-                                        <option value="Office & School" >Office & School</option>
-                                        <option value="Electronic" >Electronic</option>
+                                        <?php 
+                                            $cat_data = mysqli_query($conn, "SELECT * FROM categories");
+                                            while($row = mysqli_fetch_array($cat_data)){
+                                                echo ' 
+                                            
+                                                <option value='.$row["name"].'  >'.$row["name"].' </option>'
+                                                ;
+                                            }
+                                        ?>
                                     </select>
                             </div>
                         </div>
