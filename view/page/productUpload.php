@@ -54,7 +54,7 @@ include '../../model/profile_chek.php';
                             <a class="nav-link box text-activee" aria-current="page" href="profile.php">Account</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="#">About</a>
+                            <a class="nav-link text-light" href="about.php">About</a>
                         </li>
                     </ul>
                     <!-- <form class="d-flex me-3">
