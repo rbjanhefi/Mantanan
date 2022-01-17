@@ -1,0 +1,158 @@
+section.banner {
+    position: relative;
+}
+
+section.banner > img{
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+}
+
+section.banner > .title {
+    position: absolute;
+    top: 225px;
+    color: #fce5d8;
+    left: calc(40%);
+    text-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+section.banner > .title > h1 {
+    font-size: 60px !important;
+}
+
+.logos {
+    font-size: 70px !important;
+    margin: 5px;
+    font-family: 'Inspiration', cursive;
+    font-weight: bold;
+    color: #9A0680;
+}
+
+section.our {
+    width: 100%;
+    min-height: 300px;
+    background-color: #412A4C;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.our > .title {
+    text-align: center;
+    color: #fce5d8;
+}
+
+section.our > .cardOurContainer {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardOurContainer > .cardOur {
+    width: 300px;
+    min-height: 400px;
+    background-color: #2C1338;
+    margin-bottom: 20px;
+}
+
+.cardOurContainer > .cardOur > .img {
+    width: 300px;
+    height: 200px;
+}
+
+.cardOurContainer > .cardOur > .img > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cardOur > .body > .title {
+    color: #fce5d8;
+}
+
+.cardOur > .body > .detail {
+    font-size: 16px;
+    color: #fff;
+}
+
+.cardOurContainer > .cardOur > .body {
+    padding: 20px 35px 35px 35px ;
+}
+
+section.story {
+    width: 100%;
+    height: 500px;
+    background-color: #2D1339;
+    color: #fff;
+    padding: 40px 0;
+}
+
+section.story > .detailStory {
+    
+    width: 50%;
+}
+
+section.story > .detailStory > .title {
+    color: #fff;
+    padding: 20px;
+}
+
+section.story > .detailStory > .title > h1,
+section.mission > .title > h1{
+    font-size: 55px;
+    color: #fce5d8;
+}
+section.story > .detailStory > .detail {
+
+    padding: 10px;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+section.story > .character {
+    width: 50%;
+}
+
+section.story > .character > img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+
+
+section.ourTeam {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 20px;
+}
+
+section.ourTeam > .detail > .foto {
+    width: 100%;
+    display: flex;
+    margin-top: 20px;
+} 
+
+.foto > .detailFoto > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+section.ourTeam > .detail > .name{
+    display: flex;
+    background-color: aqua;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.foto > .detailFoto > .profile {
+    margin-left: 10px;
+}
+
+.foto > .detailFoto > .profile > small {
+    font-size: 12px !important;
+}
