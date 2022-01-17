@@ -185,7 +185,7 @@ if(isset($_POST['key'])){
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row["product_name"].'</h5>
                                     <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
-                                    <p class="harga mt-1 mb-2">'.$row["product_price"].'</p>
+                                    <p class="harga mt-1 mb-2">Rp. '.$row["product_price"].'</p>
                                     <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
                                         <a href="productEdit.php?id='.$row['product_id'].'">
                                             <i class="ri-pencil-line"></i>
