@@ -1,6 +1,7 @@
 section.content {
     width: 100%;
 }
+
 .kategori {
     min-width: 18%;
     height: 80vh;
@@ -30,6 +31,12 @@ section.content {
 }
 
 
+.card-body > .card-title {
+    overflow-x: hidden;
+    width: 100%;
+    height: 25px;
+}
+
 
 .form-check-input {
     width: 15px !important;
@@ -37,14 +44,14 @@ section.content {
     cursor: pointer;
 }
 
-.apply {
+.terapkan {
     position: absolute;
     bottom: 0;
     margin: 10px;
     width: 100% !important;
 }
 
-.apply > input[type='submit'] {
+.terapkan > input[type='submit'] {
     width: 92% !important;
     height: 40px !important;
     background-color: #160040;
@@ -55,7 +62,7 @@ section.content {
     transform: translateY(0);
 }
 
-.apply > input[type='submit']:active {
+.terapkan > input[type='submit']:active {
     transform: translateY(5px) !important;
     box-shadow: none !important;
 }
