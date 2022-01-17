@@ -155,7 +155,7 @@ include '../../model/profile_chek.php';
                                 }
                                 if(isset($_GET['success'])){
                                     
-                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 7500px; top: 130px; '>";
+                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 750px; top: 130px; '>";
                                   echo "<a name='close' href='productUpload.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
                                   echo $_GET['success'];
                               }

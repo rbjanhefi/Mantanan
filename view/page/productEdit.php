@@ -190,7 +190,7 @@ $pimg = $result['image_file'];
                         <div class="row mb-3">
                             <label for="inputPassword3" class="col-sm-2 col-form-label text-muted  ms-3 text-muted  ">Description</label>
                             <div class="form-floating val w-50 ">
-                                <textarea class="form-control" name="product_desc" placeholder="Deskripsi Produk" id="floatingTextarea2" style="height: 150px"><?php echo $desc ?></textarea>
+                                <textarea class="form-control" name="product_desc" placeholder="Deskripsi Produk" id="floatingTextarea2" style="height: 150px ; white-space: pre-wrap;"><?php echo $desc ?></textarea>
                                 <label for="floatingTextarea2" class="ms-5 ps-4">Deskripsi</label>
                             </div>
                         </div>

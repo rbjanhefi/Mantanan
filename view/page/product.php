@@ -22,6 +22,13 @@ if(isset($_POST['key'])){
 }else{
     $query = mysqli_query($conn, "select * from products where email ='$email'");
 }
+
+function rupiah($angka){
+  
+    $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+    return $hasil_rupiah;
+   
+  }
 ?>
 
 <!doctype html>
@@ -152,18 +159,18 @@ if(isset($_POST['key'])){
                     <p class="text-muted">Produk List</p>
                     
                 </div>
-                <div class="" style="margin-top: 80px;">
+                <div class="" style="margin-top: 80px; margin-left: 55px; ">
                             <?php
                                 if (isset($_GET['error'])){
                                     
-                                    echo "<p class='error alert alert-danger' style='font-size:13px; width: 750px; top: 130px; '>";
-                                    echo "<a name='close' href='product.php'><i class='close ri-close-line' style='left: 710px;'></i></a>";
+                                    echo "<p class='error alert alert-danger' style='font-size:13px; width: 810px; top: 130px; '>";
+                                    echo "<a name='close' href='product.php'><i class='close ri-close-line' style='left: 780px;'></i></a>";
                                     echo $_GET['error'];
                                 }
                                 if(isset($_GET['success'])){
                                     
-                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 750px; top: 130px; '>";
-                                  echo "<a name='close' href='product.php'><i class='login ri-close-line' style='left: 710px;'></i></a>";
+                                  echo "<p class='success alert alert-success' style='font-size:13px; width: 810px; top: 130px;'>";
+                                  echo "<a name='close' href='product.php'><i class='login ri-close-line' style='left: 780px;'></i></a>";
                                   echo $_GET['success'];
                               }
 
@@ -178,6 +185,7 @@ if(isset($_POST['key'])){
                         $email = $_SESSION['email'];
                 
                         while($row = mysqli_fetch_array($query)){
+                            $price = rupiah($row['product_price']);
                             $massage ="'Are you sure you want to delete your product?'";
                             echo ' 
                             <div class="card shadow m-2" style="width: 12rem;">
@@ -185,7 +193,7 @@ if(isset($_POST['key'])){
                                 <div class="card-body">
                                     <h5 class="card-title">'.$row["product_name"].'</h5>
                                     <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
-                                    <p class="harga mt-1 mb-2">Rp. '.$row["product_price"].'</p>
+                                    <p class="harga mt-1 mb-2">'.$price.'</p>
                                     <div class="btnProduk mt-2 w-100 d-flex justify-content-evenly">
                                         <a href="productEdit.php?id='.$row['product_id'].'">
                                             <i class="ri-pencil-line"></i>

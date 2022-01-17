@@ -9,7 +9,7 @@ if(isset($_POST['key'])){
     $data = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%'");
 
 }
-else if(isset($_POST['apply'])){
+else if(isset($_POST['terapkan'])){
 
     if(empty($_POST['cat'])){
         $data = mysqli_query($conn, "SELECT * FROM products");       
@@ -30,7 +30,7 @@ else{
     $data = mysqli_query($conn, "SELECT * FROM products");
 }
 
-$totalpageshow = 2;
+$totalpageshow = 8;
 $totaldata=mysqli_num_rows($data);
 $totalpage = ceil($totaldata/$totalpageshow); 
 $activepage = (isset($_GET['pages'])) ? $_GET['pages'] : 1;
@@ -39,7 +39,7 @@ $firstpage = ($totalpageshow*$activepage)- $totalpageshow;
 if(isset($_POST['key'])){
     $cari = $_POST['key'];
     $query = mysqli_query($conn, "SELECT * FROM `products` WHERE product_name LIKE '%$cari%' OR product_desc LIKE '%$cari%' LIMIT $firstpage,$totalpageshow");
-}else if(isset($_POST['apply'])){
+}else if(isset($_POST['terapkan'])){
     
     if(empty($_POST['cat'])){
         $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");       
@@ -51,7 +51,7 @@ if(isset($_POST['key'])){
         }
         else{
             $a=$cari[0];
-            $query= mysqli_query($conn, "SELECT * FROM products WHERE category LIKE'$a'LIMIT $firstpage,$totalpageshow");
+            $query= mysqli_query($conn, "SELECT * FROM products WHERE category = '$a' LIMIT $firstpage,$totalpageshow");
         }   
     }
 }
@@ -59,6 +59,12 @@ else{
     $query = mysqli_query($conn, "SELECT * FROM products LIMIT $firstpage,$totalpageshow");
 }
 
+function rupiah($angka){
+  
+    $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+    return $hasil_rupiah;
+   
+  }
 ?>
 
 <!doctype html>
@@ -148,8 +154,8 @@ else{
                    
           
                 </div>   
-                <div class="apply">
-                    <input type="submit" value="Apply" name="apply" class="shadow">
+                <div class="terapkan">
+                    <input type="submit" value="Apply" name="terapkan" class="shadow">
                 </div> 
             </form>
         </div>
@@ -161,13 +167,14 @@ else{
                             // $email = $_SESSION['email'];
                            
                             while($row = mysqli_fetch_array($query)){
+                                $price = rupiah($row['product_price']);
                                 echo ' 
                                 <div id="'.$row["product_id"].'" class="card shadow m-2" style="width: 12rem;">
                                     <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">'.$row["product_name"].'</h5>
                                         <p class="card-text text-muted mb-0">'.$row["product_desc"].'</p>
-                                        <p class="harga mt-1 mb-2">Rp. '.$row["product_price"].'</p>
+                                        <p class="harga mt-1 mb-2">'.$price.'</p>
                                     </div>
                                     <a class="btn" href="./productDetail.php?product_id='.$row["product_id"].'" role="button"></a>
                                 </div>

@@ -67,14 +67,14 @@ session_start();
         <div style="background-color: white; border:none; height:10px ; width:100%"></div>
     </div>
     <section class="banner">
-        <img src="../../asset/img/artificial.jpg" alt="">
+        <img src="../../asset/img/artificial.jpg" style="filter: blur(3px);" alt="">
         <div class="title">
             <h1><span class="logos">M</span><span >antanan</span></h1>
         </div>
     </section>
     <section class="our">
         <div class="title">
-            <p><span class="logo">M</span><span >antanan</span> adalah platform penjualan barang bekas yang aman dan berkualitas</p>
+            <p><span class="logo">M</span><span >antanan</span>  is a startup that helps you find second-hand items that are worth to use.</p>
         </div>
         <div class="cardOurContainer">
             <div class="cardOur">
@@ -86,7 +86,7 @@ session_start();
                         <p>Effective</p>
                     </div>
                     <div class="detail">
-                        <p>Mantanan memberikan platform yang efektif dalam hal menjual produk barang bekas anda</p>
+                        <p>Mantanan provides an effective platform in terms of selling your second hand</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@ session_start();
                         <p>Save</p>
                     </div>
                     <div class="detail">
-                        <p>Mantanan memberikan tempat belanja barang bekas yang aman dan nyaman</p>
+                        <p>Mantanan provides a safe and comfortable place to shop for second hand</p>
                     </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@ session_start();
                         <p>Grow Up</p>
                     </div>
                     <div class="detail">
-                        <p>Mantanan adalah solusi terbaik agar penjualan barang bekas anda meningkat dengan cepat.</p>
+                        <p>Formers are the best solution so that your second hand sales increase quickly.</p>
                     </div>
                 </div>
             </div>
@@ -145,7 +145,7 @@ session_start();
                     <img src="https://cdn.discordapp.com/attachments/764062693124341760/860512591192522752/unknown.png" alt="">
                     <div class="profile">
                         <p class="mb-0">M.Muh.Akhyar.z</p>
-                        <small class="text-muted">M.Muh.Akhyar.z@gmail.com</small>
+                        <small class="text-muted">muh.0704@students.amikom.ac.id</small>
                     </div>
                 </div>
                 <div class="detailFoto">

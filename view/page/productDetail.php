@@ -18,6 +18,13 @@
     $brand= $result['product_brand'] ;
     $stock = $result['stock'];
     $desc = $result['product_desc'] ;
+
+    function rupiah($angka){
+  
+        $hasil_rupiah = "Rp " . number_format($angka,2,',','.');
+        return $hasil_rupiah;
+       
+      }
 ?>
 
 <!doctype html>
@@ -104,7 +111,7 @@
         </div>
         <div class="detailProduk">
             <div class="harga shadow-sm border ps-5 d-flex flex-column">
-                <h1><?php echo $price?></h1>
+                <h1><?php echo rupiah($price)?></h1>
                 <p class="text-muted fs-5"><?php echo $namep?></p>
                 <p class="text-muted mt-4 "><?php echo $origin?></p>
             </div>
@@ -157,8 +164,8 @@
             <div class="judul p-1 m-4 ">
                 <h4>Description</h4>
             </div>
-            <p class="m-4 text-xl-start">
-                <?php echo $desc?>
+            <p class="m-4 text-xl-start" style="white-space: pre;">
+                <?php echo$desc?>
             </p>
         </div>
     </section>
