@@ -178,6 +178,7 @@ if(isset($_POST['key'])){
                         $email = $_SESSION['email'];
                 
                         while($row = mysqli_fetch_array($query)){
+                            $massage ="'Are you sure you want to delete your product?'";
                             echo ' 
                             <div class="card shadow m-2" style="width: 12rem;">
                                 <img src="data:image/png;base64,'.base64_encode($row["image_file"]).'" class="card-img-top" alt="...">
@@ -191,7 +192,7 @@ if(isset($_POST['key'])){
                                         </a>
                                         <div class="border-end"></div>
                                         <button>
-                                        <a href="../../model/product_delete.php?id='.$row['product_id'].'">
+                                        <a href="../../model/product_delete.php?id='.$row['product_id'].'" onclick="return confirm('.$massage.')">
                                             <i class="ri-delete-bin-line"></i>
                                         </a>
                                             
